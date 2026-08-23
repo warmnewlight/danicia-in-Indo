@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daniel & Alicia - Indo Celebration</title>
+    <style>
+        body { font-family: 'Georgia', serif; text-align: center; color: white; margin: 0; background-color: #555e46; }
+        .hero { 
+            background: url('hero-photo.jpg') no-repeat center center/cover; 
+            padding: 120px 20px; 
+            background-color: rgba(0,0,0,0.6); 
+            background-blend-mode: overlay; 
+        }
+        h1 { font-family: 'Brush Script MT', cursive; font-size: 4em; margin: 10px; }
+        .countdown { font-size: 2em; color: #d4af37; margin: 20px 0; letter-spacing: 2px; }
+        .details { padding: 60px 20px; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Daniel & Alicia</h1>
+        <p>NOVEMBER 8, 2026 • GRAND HWA YEN, INDONESIA</p>
+        <div class="countdown" id="timer">Calculating...</div>
+    </div>
+    
+    <div class="details">
+        <h2>Event Details</h2>
+        <p><strong>Date:</strong> Sunday, November 8, 2026</p>
+        <p><strong>Time:</strong> 6:00 PM (To Be Confirmed)</p>
+        <p><strong>Venue:</strong> Grand Hwa Yen, Indonesia</p>
+    </div>
+
+    <script>
+        // Set to 6:00 PM on Nov 8, 2026
+        const eventDate = new Date("Nov 8, 2026 18:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("timer").innerHTML = days + " DAYS";
+        }, 1000);
+    </script>
+</body>
+</html>
+
