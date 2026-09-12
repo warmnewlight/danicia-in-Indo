@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel & Alicia - Perayaan Pernikahan</title>
     
+    <!-- Google Fonts: Playfair Display & Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
-        /* Base Styles & Colors (Color Swap Applied Here) */
+        /* Base Styles & Colors */
         body { 
             font-family: 'Montserrat', sans-serif; 
             text-align: center; 
@@ -29,7 +30,7 @@
             padding-top: 80px;
             min-height: 80vh;
             z-index: 1;
-            color: #FDF8ED; /* Keeping hero text cream for contrast against the dark photo */
+            color: #FDF8ED; 
         }
         .hero::before {
             content: "";
@@ -47,8 +48,8 @@
             z-index: -1;
         }
 
-        /* Typography Updates */
-        h1, h2, .number { 
+        /* Typography */
+        h1, .number, .formal-name, .event-title { 
             font-family: 'Playfair Display', serif; 
             font-weight: normal; 
         }
@@ -82,31 +83,36 @@
         }
 
         /* Section Styling */
-        .section { padding: 60px 20px; max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
-        h2 { 
-            font-size: 2.2em; 
-            margin-bottom: 25px; 
-            border-bottom: 1px solid #555e46; /* Olive line */
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        p { line-height: 1.8; font-size: 1.05em; font-weight: 300; }
+        .section { padding: 40px 20px; max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
         
-        /* Parents Details */
-        .parents { font-style: italic; margin-bottom: 30px; font-size: 1.1em; color: #555e46; font-family: 'Playfair Display', serif;}
+        /* Invitation Text Specifics */
+        .intro-text { font-style: italic; font-size: 1.1em; line-height: 1.8; margin-top: 20px; }
+        
+        .formal-name { font-size: 3em; color: #b59b57; margin: 30px 0 5px 0; }
+        .chinese-name { font-family: 'Playfair Display', serif; font-size: 1.5em; font-style: italic; color: #b59b57; margin-top: 0; margin-bottom: 15px;}
+        .parents-text { font-size: 1em; line-height: 1.6; font-weight: 400; margin-bottom: 30px;}
+        
+        .with-text { font-family: 'Montserrat', sans-serif; font-size: 1em; letter-spacing: 2px; margin: 20px 0; font-weight: 300; text-transform: lowercase;}
+        
+        .event-details { border-top: 1px solid rgba(85, 94, 70, 0.3); border-bottom: 1px solid rgba(85, 94, 70, 0.3); padding: 40px 20px; margin: 40px auto; }
+        .sub-heading { font-style: italic; margin-bottom: 10px; }
+        .event-title { font-size: 1.8em; margin: 10px 0 25px 0; letter-spacing: 1px; }
+        .detail-lines p { margin: 10px 0; font-size: 1.1em; line-height: 1.6;}
+        
+        .closing-text { font-size: 1.05em; line-height: 1.8; margin-top: 20px;}
+        .sign-off { margin-top: 30px; font-size: 1.1em; }
+        .sign-off strong { font-family: 'Playfair Display', serif; font-size: 1.5em; display: block; margin-top: 10px; font-weight: normal; color: #b59b57;}
 
         /* Map Embed */
         .map-container { margin-top: 30px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 
         /* Olive Branch Sketch */
         .olive-branch { position: fixed; bottom: -50px; left: -50px; width: 400px; opacity: 0.15; z-index: 0; pointer-events: none; }
-
-        /* Photo Gallery Grid */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 30px; }
-        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         
         @media (max-width: 600px) { 
             h1 { font-size: 3.2em; } 
+            .formal-name { font-size: 2.2em; }
+            .event-title { font-size: 1.4em; }
             .olive-branch { width: 250px; } 
             .countdown-container { gap: 12px; } 
             .time-box .number { font-size: 2.2em; } 
@@ -119,6 +125,7 @@
         <h1>Daniel &amp; Alicia</h1>
         <p>8 November 2026 • Grand Hwa Yen</p>
         
+        <!-- Live Countdown -->
         <div class="countdown-container" id="timer">
             <div class="time-box"><span class="number" id="days">00</span><span class="label">Hari</span></div>
             <div class="time-box"><span class="number" id="hours">00</span><span class="label">Jam</span></div>
@@ -127,31 +134,49 @@
         </div>
     </div>
     
-    <div class="section">
-        <h2>Tentang Kami</h2>
-        <div class="parents">
-            <p>Putra dari Bpk. Anri Darmawirya & Ibu Desy Octavia<br>
-            Putri dari Bpk. Gunawan Gou & Ibu Desy Loren</p>
-        </div>
-           </div>
+    <!-- Opening Verse -->
+    <div class="section intro-text">
+        <p>"Tuhan menjadikan segala sesuatu indah pada waktu-Nya.<br>
+        Indah saat Ia menumbuhkan kasih diantara kami,<br>
+        dan indah saat Ia mempersatukan kami dalam Pernikahan Kudus"</p>
+    </div>
 
-    <div class="section">
-        <h2>Informasi Acara</h2>
-        <p><strong>Tanggal:</strong> Minggu, 8 November 2026</p>
-        <p><strong>Waktu:</strong> 18:00 WIB (Waktu masih akan dikonfirmasi)</p>
-        <p><strong>Tempat:</strong> Grand Hwa Yen</p>
+    <!-- The Couple -->
+    <div class="section couple-section">
+        <h2 class="formal-name">Alicia Devina Meilina</h2>
+        <p class="chinese-name">(Gou Sui Yen)</p>
+        <p class="parents-text">Putri Kedua dari Tn. Gou Nam Sua (Gunawan G.) &<br>Ny. Ng Mang Khie (Desy Loren)</p>
         
-        <div class="map-container">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3739.706340764817!2d106.8097667!3d-6.133213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1df90ac3aa65%3A0x80d56bf1bf538cf!2sGrand%20Hwa%20Yen!5e1!3m2!1sen!2sau!4v1788900596778!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
+        <div class="with-text">dengan</div>
+        
+        <h2 class="formal-name">Daniel Darmawirya</h2>
+        <p class="parents-text">Putra Pertama dari Tn. Anri Darmawirya &<br>Ny. Desy Octavia</p>
+    </div>
 
-    <div class="section">
-        <h2>Galeri Foto</h2>
-        <div class="gallery">
-            <img src="gallery1.jpg" alt="Daniel and Alicia 1">
-            <img src="gallery2.jpg" alt="Daniel and Alicia 2">
-            <img src="gallery3.jpg" alt="Daniel and Alicia 3">
+    <!-- Event Details -->
+    <div class="section event-details">
+        <p class="sub-heading">Yang akan dilaksanakan pada :</p>
+        <h3 class="event-title">Resepsi Pernikahan (makan meja/ciak tok)</h3>
+        
+        <div class="detail-lines">
+            <p><strong>Minggu, 8 November 2026</strong><br>
+            Imlek: 30-09-2577</p>
+            <p><strong>Pukul : 18.00 WIB (Tepat Waktu)</strong></p>
+            <p><strong>Tempat : Grand Hwa Yen Restaurant</strong><br>
+            Jl. Roa Malaka Utara No. 30, Jakarta Barat.</p>
         </div>
+        
+        <!-- Google Maps Embed for Jl. Roa Malaka Utara No. 30 -->
+        <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Grand%20Hwa%20Yen%20Restaurant,%20Jl.%20Roa%20Malaka%20Utara%20No.%2030,%20Jakarta%20Barat&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="section closing-text">
+        <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai.</p>
+        
+        <p class="sign-off">Kami Yang Berbahagia,<strong>Alicia & Daniel</strong></p>
     </div>
 
     <img src="olive-branch.png" alt="" class="olive-branch">
